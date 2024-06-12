@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [];
+        for(let i=0; i<20; i++){
+            const x = Math.round(Math.random()*100);
+            const y = Math.round(Math.random()*100);
+            let obj = {x:x , y:y};
+            arr.push(obj);
+        }
+        console.log(arr);
+        // for(let element of arr){
+        //     console.log(element);
+        // }
+
+        //first {x>y}
+        const firstXBiggerThanY = arr.find(({x,y}) => x>y);
+        console.log(firstXBiggerThanY); 
+        //first y bigger than 50
+        const firstYBiggerThan50 = arr.find( ({x,y})=> y>50);
+        console.log(firstYBiggerThan50);
+
+        //all even x
+        const allEvenX = arr.filter( ({x,y})=> x%2===0);
+        console.log(allEvenX);
+        //all y bigger than 50
+        const allYBiggerThan50 = arr.filter( ({x,y})=> y>50);
+        console.log(allYBiggerThan50);
+
+        //the index of first x>50
+        const firstXIndexBiggerThan50 = arr.findIndex( ({x,y})=> x>50);
+        console.log(firstXIndexBiggerThan50);
+
+        //distance from origin point
+        const distance = arr.map( ({x,y}) => Math.round(Math.sqrt(x*x + y*y)) );
+        console.log(distance);
+    </script>
+</body>
+</html>

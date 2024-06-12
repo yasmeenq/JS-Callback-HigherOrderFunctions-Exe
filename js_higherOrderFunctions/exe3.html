@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Function to generate a random integer within a specified range
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Define Pizza class
+        class Pizza {
+            constructor(diameter, slices, toppings, price) {
+                this.diameter = diameter;
+                this.slices = slices;
+                this.toppings = toppings;
+                this.price = price;
+            }
+        }
+
+        // Empty array to store pizzas
+        let pizzas = [];
+
+        // Populate the array with 20 random pizzas
+        for (let i = 0; i < 20; i++) {
+            let diameter = getRandomInt(20, 40); // Diameter between 20 and 40 cm
+            let slices = getRandomInt(4, 12); // Random number of slices between 4 and 12
+            let toppings = getRandomInt(0, 5); // Up to 5 toppings
+            let price = getRandomInt(20, 100); // Price between 20 and 100
+
+            pizzas.push(new Pizza(diameter, slices, toppings, price));
+        }
+
+        // Display the array itself
+        console.log("Array of pizzas:");
+        console.log(pizzas);
+
+        // Find the first pizza without toppings
+        console.log("\nFirst pizza without toppings:");
+        const pizzaWithoutToppings = pizzas.find(pizza => pizza.toppings === 0);
+        console.log(pizzaWithoutToppings);
+
+        // Find the first pizza with a price lower than 30
+        console.log("\nFirst pizza with price lower than 30:");
+        const cheapPizza = pizzas.find(pizza => pizza.price < 30);
+        console.log(cheapPizza);
+
+        // Find all personal pizzas (diameter <= 20)
+        console.log("\nAll personal pizzas (diameter <= 20):");
+        const personalPizzas = pizzas.filter(pizza => pizza.diameter <= 20);
+        console.log(personalPizzas);
+
+        // Find all expensive pizzas (price > 80)
+        console.log("\nAll expensive pizzas (price > 80):");
+        const expensivePizzas = pizzas.filter(pizza => pizza.price > 80);
+        console.log(expensivePizzas);
+
+        // Find all pizzas without toppings
+        console.log("\nAll pizzas without toppings:");
+        const pizzasWithoutToppings = pizzas.filter(pizza => pizza.toppings === 0);
+        console.log(pizzasWithoutToppings);
+
+        // Find the index of the first pizza with 6 slices
+        console.log("\nIndex of the first pizza with 6 slices:");
+        const index = pizzas.findIndex(pizza => pizza.slices === 6);
+        if (index !== -1) {
+            console.log(index);
+        } else {
+            console.log("No pizza found with 6 slices.");
+        }
+        
+        // Calculate the radius of each pizza
+        console.log("\nRadius of all pizzas:");
+        const radius = pizzas.map(pizza => pizza.diameter / 2);
+        console.log(radius);
+
+    </script>
+</body>
+</html>

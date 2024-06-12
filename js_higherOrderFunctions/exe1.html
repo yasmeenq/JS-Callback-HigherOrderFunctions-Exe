@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [];
+        for(let i=0; i<20; i++){
+            const random = Math.round(Math.random()*100);
+            arr.push(random);
+        }
+        console.log(arr);
+
+        //find
+        const firstEvenNumber = arr.find(n=>n%2===0);
+        console.log(firstEvenNumber);
+        const firstNumBiggerThan50 = arr.find(n=> n>50);
+        console.log(firstNumBiggerThan50);
+
+        //filter
+        const allOdds = arr.filter(n=>n%2!==0);
+        console.log(allOdds);
+        const allNumbersBiggerThan50 = arr.filter(n=>n>50);
+        console.log(allNumbersBiggerThan50);
+
+        //findIndex
+        const firstIndexBiggerThan50 = arr.findIndex(n=>n>50);
+        console.log(firstIndexBiggerThan50);
+
+        //map 
+        const evenOrOdd = arr.map(n => n%2===0 ? 'even' : 'odd' );
+        console.log(evenOrOdd);
+    </script>
+</body>
+</html>
