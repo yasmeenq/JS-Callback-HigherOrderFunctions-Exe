@@ -1,0 +1,23 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function amazing(callback){
+            const num = callback(42,128,37,81,66);
+            document.write('Num: '+ num); 
+        }
+        amazing( (a1,a2,a3,a4,a5)=>{
+            const args = [a1,a2,a3,a4,a5];
+            const randomIndex = Math.round(Math.random()*args.length);
+            const randomNumber = args[randomIndex];
+            console.log(randomNumber);
+            return randomNumber;
+        });
+    </script>
+</body>
+</html>

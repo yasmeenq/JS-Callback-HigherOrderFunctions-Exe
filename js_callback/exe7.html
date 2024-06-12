@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function amazing(paintCallback){
+            const paintedColor = paintCallback('red','green','blue');
+            document.write('painted color: '+ paintedColor);
+        }
+        amazing((c1,c2,c3)=>{
+            const colors = [c1,c2,c3];
+            const randomIndex = Math.floor(Math.random()*colors.length);
+            const randomColor = colors[randomIndex];
+            document.body.style.background = randomColor;
+            return randomColor;
+        });
+    </script>
+</body>
+</html>

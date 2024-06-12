@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function nice(){
+            const colors = ['blue','pink','grey'];
+            const randIndex = Math.floor(Math.random()*colors.length);
+            document.body.style.background= colors[randIndex];
+        }
+        setInterval(nice,1000);
+    </script>
+</body>
+</html>
